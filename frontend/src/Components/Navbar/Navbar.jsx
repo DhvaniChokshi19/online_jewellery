@@ -21,7 +21,7 @@ const Navbar = () =>{
         <div className = "navbar">
             <div className = "navbar-logo">
                 <img alt="logo" src={logo}></img>
-                <p>Gold Jewellery</p>
+                <p>Jewellery</p>
             </div>
             <img className="nav-dropdown" onClick={dropdown_toggle}src={nav_dropdown} alt="" />
             <ul ref={menuRef} className="nav-menu">
@@ -31,7 +31,10 @@ const Navbar = () =>{
                 <li onClick={()=>{setMenu("necklace")}}><Link style={{textDecoration:'none'}} to='/necklace'>Necklace</Link>{menu === "necklace"? <hr></hr>:<></>}</li>
             </ul>
             <div className="nav-login-cart">
-                <Link style={{textDecoration:'none'}} to='/login'><button>Login</button></Link>
+                {localStorage.getItem('auth-token')
+                ?<button onClick={()=>{localStorage.removeItem('auth-token');window.location.replace('/')}}>Logout</button>
+            :<Link style={{textDecoration:'none'}} to='/login'><button>Login</button></Link>}
+                
                 <Link style={{textDecoration:'none'}}to='/cart'><img alt = "cartlogo" src={cart_icon}></img></Link>
                 <div className="nav-cart-count">{getTotalCartItems()}</div>
             </div>
