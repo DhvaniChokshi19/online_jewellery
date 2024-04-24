@@ -1,5 +1,3 @@
-import { response } from 'express';
-import { METHODS } from 'http';
 import React, {createContext, useEffect} from 'react'
 // import all_product from '../Components/Assests/all_product';
 import { useState } from 'react';
@@ -11,8 +9,6 @@ const getDefaultCart = ()=>{
         }
         return cart;
     }
-
-
 const ShopContextProvider = (props)=>{
     const [all_product,setAll_Product]=useState([]);
     const [cartItems,setCartItems]=useState(getDefaultCart());
@@ -25,7 +21,7 @@ const ShopContextProvider = (props)=>{
             fetch('http://localhost:4000/getcart',{
                 method:"POST",
                 headers:{
-                    Accpet:'application/form-data',
+                    Accept:'application/form-data',
                     'auth-token':`${localStorage.getItem('auth-token')}`,
                     'Content-Type':'application/json',
                 },
@@ -75,8 +71,9 @@ const ShopContextProvider = (props)=>{
                 let itemInfo = all_product.find((product)=>product.id===Number(item));
                 totalAmount+= itemInfo.new_price * cartItems[item];
             }
-            return totalAmount;
+            
         }
+        return totalAmount;
     }
     const getTotalCartItems = () =>{
         let totalItem = 0;

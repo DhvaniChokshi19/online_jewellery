@@ -6,8 +6,6 @@ const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
-// const { type } = require('os');
-// const { error } = require('console');
 
 app.use(express.json());
 app.use(cors());
@@ -104,8 +102,7 @@ app.post('/addproduct',async (req,res)=>{
 })
 })
 
-
-//creatinf api for deleting products
+//creating api for deleting products
 app.post('/removeproduct',async (req,res)=>{
     await Product.findOneAndDelete({id:req.body.id});
     console.log("Removed");
@@ -187,7 +184,7 @@ app.post('/login',async(req,res)=>{
             }
         }
         const token = jwt.sign(data,'secret_ecom');
-        res.json({success:true,token});
+        res.json({success:true,token})
     }
     else{
         res.json({success:false,errors:"Wrong Password"});
@@ -216,7 +213,7 @@ app.get('/popular',async(req,res)=>{
 })
 
 //creating middlieware to fetch user
-const fetchUser = async(req,res)=>{
+const fetchUser = async(req,res,next)=>{
     const token = req.header('auth-token');
     if(!token){
         res.status(401).send({errors:"Please authenticate using valid token"});
@@ -254,7 +251,7 @@ app.post('/removefromcart',fetchUser,async(req,res)=>{
 
 //creating end point for to get cart data
 app.post('/getcart',fetchUser,async(req,res)=>{
-console.log("get cart");
+console.log("GetCart");
 let userData = await Users.findOne({_id:req.user.id});
 res.json(userData.cartData);
 })
