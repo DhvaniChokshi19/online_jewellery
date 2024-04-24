@@ -9,7 +9,7 @@ export const Footer = () => {
     <div className='footer'>
         <div className='footer-logo'>
             <img src={logo} alt=""></img>
-            <p>Gold Jewllery</p>
+            <p>Gemstone Guild</p>
         </div>
         <ul className='footer-links'>
             <li>Products</li>

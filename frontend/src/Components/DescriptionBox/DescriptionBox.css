@@ -36,7 +36,15 @@
     .descriptionbox{
         margin: 60px 20px;
     }
-    .descriptionbox-description{
-        font-size: 114px;
+    .descriptionbox-description p{
+        font-size: 20px;
+    }
+}
+@media(max-width:500px) {
+    .descriptionbox {
+        margin: 40px 10px;
+    }
+    .descriptionbox-description p{
+        font-size: 20px
     }
 }

@@ -21,7 +21,7 @@ const Navbar = () =>{
         <div className = "navbar">
             <div className = "navbar-logo">
                 <img alt="logo" src={logo}></img>
-                <p>Jewellery</p>
+                <p>Gemstone Guild</p>
             </div>
             <img className="nav-dropdown" onClick={dropdown_toggle}src={nav_dropdown} alt="" />
             <ul ref={menuRef} className="nav-menu">

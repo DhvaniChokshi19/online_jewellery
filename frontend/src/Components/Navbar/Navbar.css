@@ -15,7 +15,12 @@
     color: rgb(255, 170, 0);
     font-size: 38px;
     font-weight: 500;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    font-family:"Platypi"
+}
+.sub-title{
+    color: rgb(2255,170,0);
+    font-size: 10px;
+    font-weight: 200;
 }
 .nav-menu{
     display: flex;
@@ -51,7 +56,7 @@ gap: 40px;
     width: 147px;
     height: 55px;
     outline: none;
-    border: 1px solid rgb(251, 189, 3);
+    border: 1px solid rgb(255, 193, 6);
     border-radius: 75px;
     color: black;
     font-size: 20px;
@@ -80,13 +85,13 @@ gap: 40px;
 }
 @media(max-width:1280px){
     .navbar{
-        padding: 12px 50px;
+        padding: 11px 50px;
     }
     .nav-logo img{
         width: 40px;
     }
     .nav-logo p{
-        font-size: 25px;
+        font-size: 27px;
     }
     .nav-menu{
         gap: 30px;
@@ -138,12 +143,12 @@ gap: 40px;
     }
     .nav-menu{
         display: none;
-        height: 80px;
+        height: 50px;
         width: 100%;
         position: absolute;
-        background: white;
+        background:rgb(255, 251, 247);
         justify-content: center;
-        top: 50px;
+        top: 80px;
     }
     .nav-menu-visible{
         display: flex;
@@ -154,15 +159,19 @@ gap: 40px;
 }
 @media(max-width:500px){
 .navbar{
-width: 8px 0px;
+width: 7px 0px;
 gap: 0;
 }
 .nav-logo{
 transform: scale(0.8);
 }
+.nav-logo p{
+   font-size: 30px;
+   top:10px;
+}
 .nav-menu{
-height: 70px;
-top: 50px;
+height: 50px;
+top: 80px;
 }
 .nav-login-cart{
 transform: scale(0.8);
